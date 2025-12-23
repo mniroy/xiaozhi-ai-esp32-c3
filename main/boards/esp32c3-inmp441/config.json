@@ -1,0 +1,14 @@
+{
+    "target": "esp32c3",
+    "builds": [
+        {
+            "name": "esp32c3-inmp441",
+            "sdkconfig_append": [
+                "CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y",
+                "CONFIG_PARTITION_TABLE_CUSTOM_FILENAME=\"partitions/v2/4m.csv\"",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y"
+            ]
+        }
+    ]
+}
