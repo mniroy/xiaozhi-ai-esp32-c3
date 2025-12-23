@@ -1,6 +1,6 @@
 # Xiaozhi AI - ESP32-C3 Edition
 
-A voice-controlled AI assistant running on ESP32-C3 with minimal hardware. Talk to AI using a simple push-to-talk button!
+Affordable solution for Xiaozhi AI using ESP32-C3.
 
 ## Features
 
