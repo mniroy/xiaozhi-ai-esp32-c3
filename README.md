@@ -12,13 +12,16 @@ Affordable solution for Xiaozhi AI using ESP32-C3.
 
 ## Hardware Required
 
-| Component | Description |
-|-----------|-------------|
-| ESP32-C3 | Any ESP32-C3 dev board (4MB flash) |
-| INMP441 | I2S MEMS microphone |
-| MAX98357A | I2S amplifier + speaker |
-| Push Button | Momentary switch |
-| SSD1306 OLED | 128x64 I2C display (optional) |
+| Component | Description | Cost (IDR) | Cost (USD) |
+|-----------|-------------|------------|------------|
+| ESP32-C3 | Dev board (4MB flash) | Rp 35,000 | $2.20 |
+| INMP441 | I2S MEMS microphone | Rp 25,000 | $1.60 |
+| MAX98357A | I2S amplifier | Rp 20,000 | $1.25 |
+| Speaker | 3W 4Ω | Rp 10,000 | $0.65 |
+| Push Button | Momentary switch | Rp 1,000 | $0.10 |
+| SSD1306 OLED | 128x64 I2C (optional) | Rp 25,000 | $1.60 |
+| **Total** | **(without OLED)** | **Rp 91,000** | **$5.80** |
+| **Total** | **(with OLED)** | **Rp 116,000** | **$7.40** |
 
 ## Wiring Diagram
 
@@ -61,12 +64,17 @@ GND     ────────► GND
 
 ## Installation
 
-### Prerequisites
+### Option 1: Easy Flash (Recommended)
 
-- [ESP-IDF v5.5+](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/)
-- Git
+1. Download the latest firmware from [Releases](https://github.com/mniroy/xiaozhi-ai-esp32-c3/releases)
+2. Go to [Web Flasher](https://mniroy.github.io/Escher_ESP_Flasher/)
+3. Connect your ESP32-C3 via USB
+4. Click "Connect" and select your device
+5. Upload the `.bin` file and flash at address `0x0`
 
-### Build & Flash
+### Option 2: Build from Source
+
+**Prerequisites:** [ESP-IDF v5.5+](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/)
 
 ```bash
 # Clone the repository
@@ -76,11 +84,8 @@ cd xiaozhi-ai-esp32-c3
 # Set target to ESP32-C3
 idf.py set-target esp32c3
 
-# Build the project
-idf.py build
-
-# Flash to device (replace COM6 with your port)
-idf.py -p COM6 flash monitor
+# Build and flash
+idf.py build flash monitor
 ```
 
 ## Usage
